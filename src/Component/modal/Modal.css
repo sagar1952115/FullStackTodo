@@ -1,0 +1,85 @@
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    /* background-blend-mode: darken; */
+    /* background:linear-gradient(to right bottom, #e1b382, #c89666); */
+    background-color: trasparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.modalContainer {
+    /* background-color: white;
+        width: 400px;
+        min-height: 250px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: 3px 6px 40px #000;
+        align-items: center;
+        text-align: center;
+        margin: auto; */
+
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    /* background-color: #12343b; */
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.task-input {
+    outline: none;
+    width: 260px;
+    padding: 15px;
+    font-size: 20px;
+    color: #ccc;
+    background-color: #000000;
+    border: 1px solid #c89666;
+    border-radius: 10px;
+}
+
+.btn {
+    display: flex;
+    /* padding: 15px; */
+    justify-content: space-between;
+}
+
+.button-add,
+.button-Cancel {
+    margin-top: 20px;
+    width: 130px;
+    padding: 15px 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #f1af71;
+    cursor: pointer;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+.button-Cancel {
+    background-color: red;
+    color: black;
+
+
+}

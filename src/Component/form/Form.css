@@ -1,0 +1,27 @@
+/* .apps{
+    width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Nunito", sans-serif;
+} */
+
+/* .apps{
+    display: block;
+    width: 100%;
+    margin: auto;
+} */
+
+.AddModal {
+    /* color:linear-gradient(to right bottom, #e1b382, #c89666); */
+    display: block;
+    margin: auto;
+    /* color: #e1b382; */
+    color: #c89666;
+    /* text-align: center; */
+    /* align-items: center;
+    display: flex; */
+    /* justify-content: center; */
+    font-size: 40px;
+}
