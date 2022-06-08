@@ -21,6 +21,18 @@ const reducer = (state, action) => {
           return crr;
         }),
       };
+
+    case "EDIT_TODO": {
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id !== action.payload.id
+            ? todo
+            : { id: action.payload.id, ...action.payload.data }
+        ),
+      };
+    }
+
     default:
       return state;
   }

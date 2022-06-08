@@ -9,7 +9,7 @@ const Form = ({ setModal, modal, setEditTodo, editTodo }) => {
       <div className="apps">
         <IoMdAddCircle className="AddModal" onClick={() => setModal(true)} />
       </div>
-      {modal && <Modal setModal={setModal} />}
+      {modal && <Modal setModal={setModal} add={true} />}
     </div>
   );
 };

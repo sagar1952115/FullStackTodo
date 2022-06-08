@@ -6,6 +6,8 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 import { GlobalContext } from "../../context/GlobalState";
 
 import "./TodoList.css";
+import { useState } from "react";
+import Modal from "../modal/Modal";
 
 const TodoList = ({ setModal }) => {
   // const handleDelete = ({ id }) => {
@@ -13,6 +15,9 @@ const TodoList = ({ setModal }) => {
   // };
   const { todos } = useContext(GlobalContext);
   const { deleteTodo, completeTodo } = useContext(GlobalContext);
+  const [open, setOpen] = useState(false);
+
+  const [currTodo, setCurrTodo] = useState({});
   // console.log(todos);
 
   return (
@@ -40,7 +45,10 @@ const TodoList = ({ setModal }) => {
             </button>
             <button
               className="button-edit task-button"
-              onClick={() => setModal(true)}
+              onClick={() => {
+                setOpen(true);
+                setCurrTodo(crr);
+              }}
             >
               <TiEdit />
             </button>
@@ -54,6 +62,7 @@ const TodoList = ({ setModal }) => {
           </div>
         </li>
       ))}
+      {open && <Modal setModal={setOpen} todo={currTodo} />}
     </div>
   );
 };

@@ -54,10 +54,13 @@ export const GlobalProvider = ({ children }) => {
       payload: todo,
     });
   }
-  function editTodo(id) {
+  function editTodo(id, data) {
     dispatch({
       type: "EDIT_TODO",
-      payload: id,
+      payload: {
+        id,
+        data,
+      },
     });
   }
   return (

@@ -1,20 +1,16 @@
 import "../main.css";
 import React, { useState } from "react";
-import Form from "../../Component/form/Form";
 import TodoList from "../../Component/todolist/TodoList";
 import Header from "../../Component/header/Header";
 
-function HomePage({ modal, setModal }) {
+function InboxPage() {
   //modal
-
+  const [modal, setModal] = useState(false);
   return (
     <div className="container">
       <div className="app-wrapper">
         <div>
-          <Header str="Today's" />
-        </div>
-        <div>
-          <Form modal={modal} setModal={setModal} />
+          <Header str="Inbox" />
         </div>
         <div>
           <TodoList setModal={setModal} />
@@ -24,4 +20,4 @@ function HomePage({ modal, setModal }) {
   );
 }
 
-export default HomePage;
+export default InboxPage;

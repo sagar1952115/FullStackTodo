@@ -4,9 +4,9 @@ import "./Modal.css";
 import { GlobalContext } from "../../context/GlobalState";
 import { useContext } from "react";
 
-const Dummy = ({ setModal }) => {
-  const [title, setTitle] = useState("");
-  const { addTodo } = useContext(GlobalContext);
+const Modal = ({ setModal, todo = { title: "" }, add }) => {
+  const [title, setTitle] = useState(() => todo.title);
+  const { addTodo, editTodo } = useContext(GlobalContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +15,12 @@ const Dummy = ({ setModal }) => {
       title: title,
       completed: false,
     };
-    addTodo(newTodo);
+    if (add) {
+      addTodo(newTodo);
+      setModal(false);
+      return;
+    }
+    editTodo(todo.id, { title, completed: false });
     setModal(false);
   };
 
@@ -52,4 +57,4 @@ const Dummy = ({ setModal }) => {
   );
 };
 
-export default Dummy;
+export default Modal;
